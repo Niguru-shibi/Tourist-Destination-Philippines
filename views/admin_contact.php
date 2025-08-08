@@ -173,7 +173,7 @@
 		
 			<main role="main" class="col-md-9 ml-sm-10 col-lg-10 px-md-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Dashboard</h1>
+                        <h1 class="h2">Manage Contact Page</h1>
                         <?php
                             if (isset($_GET['msg'])) {
                                 echo ($_GET['msg']);
@@ -200,7 +200,7 @@
                     <div class="row">
                         <!-- Left side: Table -->
                         <div class="col-md-7">
-                            <h2>List of Inquiries</h2>
+                            <h2>Contact Page</h2>
                             <div class="bd-example-snippet bd-code-snippet" style="max-width: 100%;">
                                 <div class="bd-example m-0 border-0">
                                     <table class="table table-sm table-bordered">
@@ -232,13 +232,13 @@
                                                                 : htmlspecialchars($data['client_time']) ?>
                                                         </td>
                                                         <td style="text-align: center;">
-                                                            <a class="btn btn-info btn-sm" href="inquiry.php?page=inquiry&msg_client_id=<?= $data['client_id'] ?>" title="VIEW">
+                                                            <a class="btn btn-info btn-sm" href="admin_contact.php?page=admincontact&msg_client_id=<?= $data['client_id'] ?>" title="VIEW">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye">
                                                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                                                                     <circle cx="12" cy="12" r="3"></circle>
                                                                 </svg>
                                                             </a>
-                                                            <a class="btn btn-warning btn-sm" href="inquiry.php?page=inquiry&action=delete&client_id=<?= $data['client_id'] ?>" title="DELETE">
+                                                            <a class="btn btn-warning btn-sm" href="admin_contact.php?page=admincontact&action=delete&client_id=<?= $data['client_id'] ?>" title="DELETE">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash">
                                                                     <polyline points="3 6 5 6 21 6"></polyline>
                                                                     <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -279,6 +279,12 @@
                                             <strong>Contact Number:</strong> <label><?= htmlspecialchars($msg['client_contact']) ?></label><br>
                                             <strong>Date:</strong> <label><?= date("M d, Y  h:i:s A", strtotime($msg['client_time'])) ?></label>
                                         </p>
+                                        <hr>
+                                        <h6>Reply Client</h6>
+                                        <p class="contact-client">
+                                            <textarea type="text" class="form-control" placeholder="Write your message here..." id="reply-message"></textarea> <br>
+                                            <button type="submit" class="btn-sm btn-primary style-bold">Send Message</button>
+                                        </p>
                                         <?php
                                     } else {
                                         echo '<div class="alert alert-danger">Inquiry not found.</div>';
@@ -313,5 +319,6 @@
 		
 	
 
-</body></html>
+</body>
+</html>
 

@@ -132,7 +132,7 @@ if (isset($_POST['featureBtn'])) {
 }
 
 //Update Footer
-if (isset($_POST['updateFooter'])){
+if (isset($_POST['ftrBtn'])){
     $id = $_POST['id'];
     $name = $_POST['name'];
     $position = $_POST['position'];
@@ -193,7 +193,7 @@ if (isset($_POST['updateFooter'])){
     $query = mysqli_query($conn, $sql);
 
     if ($query){
-        header('location: ../nav/footer.php?page=footer');
+        header('location: admin_footer.php?page=footer');
     }
 }
 

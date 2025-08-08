@@ -316,3 +316,5 @@ $services = mysqli_fetch_all($services_query);
         </main>
     </div>
     <hr class="featurette-divider">
+<?php include 'footer.php'?>
+

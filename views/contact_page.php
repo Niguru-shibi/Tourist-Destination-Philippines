@@ -167,3 +167,4 @@
 	        </div>
         </div>
     <hr class="featurette-divider">
+<?php include 'footer.php'?>

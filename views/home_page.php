@@ -723,3 +723,4 @@ $feature = mysqli_fetch_all($feature_query);
         </div>
     </div>
     <hr class="featurette-divider">
+<?php include 'footer.php'?>
